@@ -8,4 +8,4 @@
 #PBS -j oe
 #PBS -m abe -M matt.haffner@okstate.edu
 module load python
-bash /home/haff112/scripts/others/split_manage_parse_batch.sh ${MY_FOLDER} ${TWEET_FILE}
+python /home/matt/MEGA/megasync/git-repos/hpc-novice-first-draft/modules/twitter/parse_tweets_fn.py raw-tweets.csv parsed-tweets.csv 
