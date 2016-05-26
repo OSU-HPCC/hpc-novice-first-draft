@@ -70,7 +70,6 @@ After connecting, your Cyberduck window should now look like the window below, l
 
 From here you can click on and navigate your directories and files in your home directory on Cowboy. To move a file from Cowboy to your local machine, you can drag and drop the file onto your Desktop or right-click the file or directory to download it onto your local machine. To move a file from your local machine to Cowboy, navigate inside of Cyberduck to the Cowboy directory you want and then drag and drop the file from your local machine into the window. You can also choose the 'Action' drop down menu at the top of the Cyberduck window and choose the 'Upload' option.
 
->*Using the Command Line to Transfer Files*
 >If you are using Linux or a Mac, you can also transfer files using the command line. To copy a file from Cowboy to your local machine open a terminal on your local machine and type `scp yourusername@cowboy.hpc.okstate.edu:/directory/yourfilename .` Be sure to include a space and a period in the command.
 >To copy a file from your local machine to Cowboy, open a terminal on your local machine, navigate to the directory where your file is located and type the following command: `scp yourfilename yourusername@cowboy.hpc.okstate.edu:/directory/path/`.
 
