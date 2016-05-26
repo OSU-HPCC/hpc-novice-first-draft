@@ -26,8 +26,7 @@ Putty is a free and open-source terminal emulator that supports network protocol
 
 In the box labelled hostname, enter the name of the system you want to connect to: cowboy.hpc.okstate.edu. Make sure the Connection type is SSH and the Port number is 22. In the Saved Sessions box, you can give a name for these login settings, i.e. Cowboy, then click save. The next time you open Putty, you can double click this saved session and it will open a terminal window that will be ready to log you into Cowboy. After clicking 'Open', you'll be prompted first to enter your Cowboy user name. Hit 'Enter' after you have typed your user name. Next you will be prompted to enter your password followed by 'Enter'.
 
-*SWC PIN NOTE HERE*
-Your password will not show up on the screen as you type. This is a safety feature of the bash shell. Don't worry, just type your password and hit 'Enter'.
+>Your password will not show up on the screen as you type. This is a safety feature of the bash shell. Don't worry, just type your password and hit 'Enter'.
 
 If you entered your password correctly, you should get the command prompt. If it says something like permission denied or login invalid, you might have entered your password incorrectly. Remember passwords are case sensitive.
 
@@ -38,14 +37,13 @@ Logging in from a Mac
 * Double click on the Applications folder.
 * Double click on your Utilities folder.
 * Double click on the Terminal icon.
-  ![Mac Terminal Icon](img/terminalicon.png "Terminal Icon")
+  ![Mac Terminal Icon](img/terminalicon.jpg "Terminal Icon")
 * Now that you are in a terminal window, follow the Linux instructions.
 
 Logging in from Linux
 ---------------------
 In a terminal type `ssh user_name@cowboy.hpc.okstate.edu`, where 'user_name' is your Cowboy user name. For Example, if your user name is 'pete', you would enter `ssh pete@cowboy.hpc.okstate.edu`. Next, you will be prompted to enter your password followed by 'Enter'. If you entered your password correctly, you should get the command prompt. If it says something like permission denied or login invalid, you might have entered your password incorrectly. Remember passwords are case sensitive.
 
-*SWC PIN NOTE HERE*
- In many distributions of Linux, you can open the terminal by using the keyboard shortcut CTRL-ALT-T. If you are not sure how to open the terminal in your particular distribution, a quick Google search will often reveal the answer.
+>In many distributions of Linux, you can open the terminal by using the keyboard shortcut CTRL-ALT-T. If you are not sure how to open the terminal in your particular distribution, a quick Google search will often reveal the answer.
 
 STORY OF OUR GRADUATE STUDENT CONTINUES HERE AND THE PARTICIPANTS WILL ACTUALLY LOG IN AT THIS POINT
