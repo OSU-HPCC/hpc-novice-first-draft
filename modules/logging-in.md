@@ -1,11 +1,11 @@
 Logging into a Cluster
 ======================
-*Learning Objectives*
-*    Student will be able to log on and off a Linux cluster using SSH from windows, mac or Linux based machines.
-*    Student will be able to use a gui based file transfer system (something like cyberduck) to move files to and from the cluster.
-*    Student will understand best practices in security for users of a remote system.
-*    Student will be able to change their account password.
-*    Student will understand best practices in file and data management (backing up files on your own machine).
+>*Learning Objectives*
+>*    Student will be able to log on and off a Linux cluster using SSH from windows, mac or Linux based machines.
+>*    Student will be able to use a gui based file transfer system (something like cyberduck) to move files to and from the cluster.
+>*    Student will understand best practices in security for users of a remote system.
+>*    Student will be able to change their account password.
+>*    Student will understand best practices in file and data management (backing up files on your own machine).
 
 Why Do We Have to Use a Terminal?
 =================================
@@ -48,4 +48,34 @@ In a terminal type `ssh user_name@cowboy.hpc.okstate.edu`, where 'user_name' is 
 
 >In many distributions of Linux, you can open the terminal by using the keyboard shortcut CTRL-ALT-T. If you are not sure how to open the terminal in your particular distribution, a quick Google search will often reveal the answer.
 
-STORY OF OUR GRADUATE STUDENT CONTINUES HERE AND THE PARTICIPANTS WILL ACTUALLY LOG IN AT THIS POINT
+Transferring Files
+==================
+Now that we can log into a supercomputer, we need to be able to move our project files back and forth from our personal computer and our account on the supercomputer. There are several applications that will allow us to do this.
+
+Cyberduck
+---------
+ You can download Cyberduck [here].(https://cyberduck.io/). Make sure to click the "Download" icons below the duck -- the "Start Download" icon to the right of the duck is an ad. After downloading and opening the application, you should have a window that looks like this (on a Mac):
+
+![Cyberduck Opening Screen](/img/cyberduck.jpg "Cyberduck")
+
+Click on the 'Open Connection' icon at the top left. In the pop up window, you will edit the following:
+* Choose the 'SFTP (SSH File Transfer Protocol)' option in the drop down menu at the top.
+* Set 'Server' to: `cowboy.hpc.okstate.edu`.
+* Change 'Port' to: `22`.
+* Enter your Cowboy user name and password.
+* Click 'Connect'.
+After connecting, your Cyberduck window should now look like the window below, listing the contents of your home directory:
+
+![Cyberduck File Screen](/img/cyberduckfiles.jpg "Cyberduck Files")
+
+From here you can click on and navigate your directories and files in your home directory on Cowboy. To move a file from Cowboy to your local machine, you can drag and drop the file onto your Desktop or right-click the file or directory to download it onto your local machine. To move a file from your local machine to Cowboy, navigate inside of Cyberduck to the Cowboy directory you want and then drag and drop the file from your local machine into the window. You can also choose the 'Action' drop down menu at the top of the Cyberduck window and choose the 'Upload' option.
+
+>*Using the Command Line to Transfer Files*
+>If you are using Linux or a Mac, you can also transfer files using the command line. To copy a file from Cowboy to your local machine open a terminal on your local machine and type `scp yourusername@cowboy.hpc.okstate.edu:/directory/yourfilename .` Be sure to include a space and a period in the command.
+>To copy a file from your local machine to Cowboy, open a terminal on your local machine, navigate to the directory where your file is located and type the following command: `scp yourfilename yourusername@cowboy.hpc.okstate.edu:/directory/path/`.
+
+Other Options
+-------------
+Cyberduck is one of many options available for transferring files. To see others, you can check out the OSU HPCC site [here](https://hpcc.okstate.edu/content/uploading-and-downloading-files-0).
+
+STORY OF OUR GRADUATE STUDENT HERE. PARTICIPANTS WILL LOG IN AND TRANSFER THE PROJECT FILES TO THEIR COWBOY ACCOUNT FOR THE WORKSHOP.
