@@ -37,7 +37,7 @@ Logging in from a Mac
 * Double click on the Applications folder.
 * Double click on your Utilities folder.
 * Double click on the Terminal icon.
-  ![Mac Terminal Icon](img/terminalicon.jpg "Terminal Icon")
+  ![Mac Terminal Icon](/img/terminalicon.jpg "Terminal Icon")
 * Now that you are in a terminal window, follow the Linux instructions.
 
 Logging in from Linux
