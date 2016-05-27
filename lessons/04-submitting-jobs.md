@@ -18,4 +18,6 @@ The most efficient way to use Cowboy is as follows:
 * Log out. 
 * Have the scheduler email you when your jobs are finished.
 
+>While almost every HPC cluster uses a scheduler to manage different jobs from different users, there are many, *many* different types of schedulers in use. Check with your local HPC staff to see what scheduler they use. They should be able to get you resources about what commands to use for that particular scheduler. Different scheulers emphasise different features, but all schedulers are tasked with the job of determining the most equitible and efficient way of running multiple jobs from multiple users on the cluster. They do this by queing jobs and determining which jobs are assigned to which nodes. For the purposes of this lesson, we will use Cowboy's scheduler [qsub](http://docs.adaptivecomputing.com/torque/4-0-2/Content/topics/commands/qsub.htm).
+
 THE STORY CONTINUES ON. OUR GRADUATE STUDENT WILL USE THE FOLLOWING COMMAND AS THE STORY CONTINUES: `qsub`, `showq`, `showq | grep`, `showq -u`, `qpeek`, `qdel`.
