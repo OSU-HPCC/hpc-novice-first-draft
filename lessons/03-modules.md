@@ -132,7 +132,7 @@ module list
 Wait a minute, why are there so many modules? Didn’t we just load MrBayes? The beauty of modules is that it automatically loads MrBayes and any other software that MrBayes depends on to run. Lets remove all our software and start again with a clean slate.
 
 ```shell
-module puge
+module purge
 ```
 
 GRADUATE STUDENT STORY CONTINUES HERE, WORK IN `module swap` SHORTCUT INTO THE STORY.
