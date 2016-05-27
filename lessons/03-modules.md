@@ -6,7 +6,10 @@ Modules
 >*    Student will be able to load the software that s/he needs in order to run his/her job using `module load`.
 >*    Student will be able to verify that the correct environment has been loaded using `module list`.
 
-We now know how to log in, but what good is a supercomputer if we cannot use the software on it? Windows has the Start Menu and Macs have the launch bar, but how do we find out what programs or software are available on Cowboy when all we have is the command prompt? The answer is modules. Modules are an extremely powerful system that allows multiple users with different versions of software all to use the same machine at the same time. First, it would be nice to know what software Cowboy has available for us to use.
+We now know how to log in, but what good is a supercomputer if we cannot use the software on it? Windows has the Start Menu and Macs have the launch bar, but how do we find out what programs or software are available on Cowboy when all we have is the command prompt? The answer is modules. Modules are an extremely powerful system that allows multiple users with different versions of software all to use the same machine at the same time. 
+>Modules are implemented a little bit differently on each HPC cluster. In fact, some HPC clusters don't even use modules! We will be using Cowboy's module system for this lesson. To see other kinds of module systems that exist, see here.
+
+First, it would be nice to know what software Cowboy has available for us to use.
 
 ```shell
 module avail
