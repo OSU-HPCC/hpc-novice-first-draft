@@ -25,25 +25,9 @@ In reality, meteorologists are actually heavy supercomputer users, but they do n
 
 Geospatial Twitter Data
 -----------------------
-Pete is a geography researcher who has never used a supercomputer before. Pete is working with geographical twitter data. There's a lot of data on twitter and the sheer amount of data he needs to work with means his personal computer is not going to provide him enough processing power, so he is going to need to use a Cowboy. First, he must transfer the data onto Cowboy so that he can clean it up there. He begins by opening up Cyberduck and navigating to his home folder on Cowboy.
+Pete is a geography researcher who has never used a supercomputer before. Pete is working with geographical twitter data. There's a lot of data on twitter and the sheer amount of data he needs to work with means his personal computer is not going to provide him enough processing power, so he is going to need to use a Cowboy. Since he has never used a high performance cluster before, he decides to log onto Cowboy and have a look around. He begins by using `ssh`.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+>If you are using Windows, you will use Putty instead.
 
 ```shell
 ssh pete@cowboy.hpc.okstate.edu
