@@ -25,4 +25,60 @@ In reality, meteorologists are actually heavy supercomputer users, but they do n
 
 Geospatial Twitter Data
 -----------------------
-[Need a clever name here] is a geography researcher who has never used a supercomputer before. [Name] is working with geographical twitter data. There's a lot of data on twitter and the sheer amount of data he needs to work with means his personal computer is not going to provide him enough processing power, so he is going to need to use a supercomputer. Let's see how Cowboy can assist him in his research.
+Pete is a geography researcher who has never used a supercomputer before. Pete is working with geographical twitter data. There's a lot of data on twitter and the sheer amount of data he needs to work with means his personal computer is not going to provide him enough processing power, so he is going to need to use a Cowboy. First, he must transfer the data onto Cowboy so that he can clean it up there. He begins by opening up Cyberduck and navigating to his home folder on Cowboy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```shell
+ssh pete@cowboy.hpc.okstate.edu
+```
+   
+```shell
+pete@cowboy.hpc.okstate.edu's password: 
+```
+
+He enters his password and is greeted by the welcome screen.
+
+```shell
+Last login: Fri May 27 14:31:05 2016 from 123.45.678.901
+Welcome to Cowboy!  
+
+Please see the HPC Website for helpful usage information:
+   hpcc.okstate.edu
+
+
+Cowboy is funded by NSF MRI award OCI-1126330.  For acknowledgment
+instructions see the Website.
+
+Please report all grants and publications facilitated by usage to 
+dana.brunson@okstate.edu
+
+Please direct all other questions, comments and support requests
+to hpcc@okstate.edu
+
+NOTE:
+
+ALL applications must be run through the scheduler.
+
+
+
+Quota information:
+You have used 0.0 GB of your allocated 25 GB in /home/pete.
+```
+

@@ -54,7 +54,7 @@ Now that we can log into a supercomputer, we need to be able to move our project
 
 Cyberduck
 ---------
- You can download Cyberduck [here].(https://cyberduck.io/). Make sure to click the "Download" icons below the duck -- the "Start Download" icon to the right of the duck is an ad. After downloading and opening the application, you should have a window that looks like this (on a Mac):
+ You can download Cyberduck [here](https://cyberduck.io/ "Cyberduck Download"). Make sure to click the "Download" icons below the duck -- the "Start Download" icon to the right of the duck is an ad. After downloading and opening the application, you should have a window that looks like this (on a Mac):
 
 ![Cyberduck Opening Screen](/img/cyberduck.jpg "Cyberduck")
 
@@ -77,4 +77,6 @@ Other Options
 -------------
 Cyberduck is one of many options available for transferring files. To see others, you can check out the OSU HPCC site [here](https://hpcc.okstate.edu/content/uploading-and-downloading-files-0).
 
-STORY OF OUR GRADUATE STUDENT HERE. PARTICIPANTS WILL LOG IN AND TRANSFER THE PROJECT FILES TO THEIR COWBOY ACCOUNT FOR THE WORKSHOP. THEY WILL ALSO LOOK AROUND, DO SOME BASIC BASH COMMANDS, AND BE INTRODUCED TO GOOD PRACTICES IN BACKING UP THEIR FILES ON THEIR PERSONAL MACHINE.
+>STORY OF OUR GRADUATE STUDENT HERE. PARTICIPANTS WILL LOG IN AND TRANSFER THE PROJECT FILES TO THEIR COWBOY ACCOUNT FOR THE WORKSHOP. THEY WILL ALSO LOOK AROUND, DO SOME BASIC BASH COMMANDS, AND BE INTRODUCED TO GOOD PRACTICES IN BACKING UP THEIR FILES ON THEIR PERSONAL MACHINE.
+
+
