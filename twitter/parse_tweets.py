@@ -13,7 +13,7 @@ from itertools import izip
 
 start_time = time.time()
 
-def parse_tweets(cleaned_tweet_file, parsed_tweet_file):
+def parse_tweets(raw_tweet_file, parsed_tweet_file):
 
     # Create new .csv with headers
     with open(parsed_tweet_file, 'w+') as f2:
@@ -26,7 +26,7 @@ def parse_tweets(cleaned_tweet_file, parsed_tweet_file):
         
     counter = 0
     
-    with open(cleaned_tweet_file, 'rb') as f1: # Open the raw/cleaned tweet file
+    with open(raw_tweet_file, 'rb') as f1: # Open the raw/cleaned tweet file
         reader = csv.reader(f1) # Create a reader so that the raw data can be read
         for row in reader: # For every row
             counter = counter + 1 # For displaying row number
