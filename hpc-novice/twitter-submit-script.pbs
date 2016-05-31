@@ -4,8 +4,12 @@
 #PBS -l walltime=04:00:00
 #PBS -j oe
 
-cd PBS_O_WORKDIR
+cd $PBS_O_WORKDIR
 
 module load python
 
+echo "Began parsing tweets..."
+
 python parse_tweets.py raw-tweets.csv parsed-tweets.csv 
+
+echo "Tweets parsed successfully. Have a good day."
