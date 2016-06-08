@@ -13,7 +13,7 @@ Wouldn’t it be easier if HPC systems had a graphical user interface (GUI) to n
 
 Imagine a research scientist who has data files containing the results of their research. For each run of the experiment, the scientist must make a change to each one of the files. If there are only 20 data files then clicking on each file to open it and change it, while time consuming, is doable. However, what does the scientist do for an experiment that has 200 runs, or even 2,000?
 
-Unless they employ a lot of graduate students, our poor researcher will not be able to complete their research in a timely manner. The terminal has a nice set of features that allows us to automate such tasks so that the computer does the work for us. Remember, while the terminal has a steep learning curve, it is an investment that pays itself back later by saving you time.
+Unless they employ a lot of graduate students, our poor researcher will not be able to complete their research in a timely manner. The terminal has a nice set of features that allows us to automate such tasks so that the computer does the work for us, allowing us to complete repetitive tasks quickly and more accurately. Remember, while the terminal has a steep learning curve, it is an investment that pays itself back later by saving you time.
 
 Logging In
 ==========
@@ -22,11 +22,12 @@ Since most supercomputers are Linux-based, command line systems, we need to use 
 Logging in from Windows
 -----------------------
 Putty is a free and open-source terminal emulator that supports network protocols such as SSH. First download Putty from [here](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). Download 'putty.exe', save it to your desktop and then run it. When you start Putty, a window will open that looks like the image below.
+
 ![Putty Opening Screen](/img/putty.jpg "Putty") 
 
-In the box labelled hostname, enter the name of the system you want to connect to: cowboy.hpc.okstate.edu. Make sure the Connection type is SSH and the Port number is 22. In the Saved Sessions box, you can give a name for these login settings, i.e. Cowboy, then click save. The next time you open Putty, you can double click this saved session and it will open a terminal window that will be ready to log you into Cowboy. After clicking 'Open', you'll be prompted first to enter your Cowboy user name. Hit 'Enter' after you have typed your user name. Next you will be prompted to enter your password followed by 'Enter'.
+In the box labelled hostname, enter the name of the system you want to connect to: `cowboy.hpc.okstate.edu`. Make sure the Connection type is `SSH` and the Port number is `22`. In the Saved Sessions box, you can give a name for these login settings, i.e. Cowboy, then click save. The next time you open Putty, you can double click this saved session and it will open a terminal window that will be ready to log you into Cowboy. After clicking 'Open', you'll be prompted first to enter your Cowboy user name. Hit 'Enter' after you have typed your user name. Next you will be prompted to enter your password followed by 'Enter'.
 
->Your password will not show up on the screen as you type. This is a safety feature of the bash shell. Don't worry, just type your password and hit 'Enter'.
+>Your cursor will not move as you type. This is a safety feature of the bash shell. Don't worry, just type your password and hit 'Enter'.
 
 If you entered your password correctly, you should get the command prompt. If it says something like permission denied or login invalid, you might have entered your password incorrectly. Remember passwords are case sensitive.
 
@@ -64,7 +65,7 @@ Click on the 'Open Connection' icon at the top left. In the pop up window, you w
 * Change 'Port' to: `22`.
 * Enter your Cowboy user name and password.
 * Click 'Connect'.
-After connecting, your Cyberduck window should now look like the window below, listing the contents of your home directory:
+After connecting, your Cyberduck window should now look like the window below, listing the contents of your home directory on Cowboy:
 
 ![Cyberduck File Screen](/img/cyberduckfiles.jpg "Cyberduck Files")
 
@@ -77,6 +78,104 @@ Other Options
 -------------
 Cyberduck is one of many options available for transferring files. To see others, you can check out the OSU HPCC site [here](https://hpcc.okstate.edu/content/uploading-and-downloading-files-0).
 
->STORY OF OUR GRADUATE STUDENT HERE. PARTICIPANTS WILL LOG IN AND TRANSFER THE PROJECT FILES TO THEIR COWBOY ACCOUNT FOR THE WORKSHOP. THEY WILL ALSO LOOK AROUND, DO SOME BASIC BASH COMMANDS, AND BE INTRODUCED TO GOOD PRACTICES IN BACKING UP THEIR FILES ON THEIR PERSONAL MACHINE.
+Pete's Twitter Data
+===================
+
+After receiving an account from HPCC staff, Pete logs into Cowboy for the first time. He opens up a terminal ans uses SSH.
+
+>If you are using Windows, you will use Putty instead
+
+```shell
+ssh pete@cowboy.hpc.okstate.edu
+```
+   
+```shell
+pete@cowboy.hpc.okstate.edu's password: 
+```
+
+He enters his password and is greeted by the welcome screen.
+
+```shell
+Last login: Fri May 27 14:31:05 2016 from 123.45.678.901
+Welcome to Cowboy!  
+
+Please see the HPC Website for helpful usage information:
+   hpcc.okstate.edu
 
 
+Cowboy is funded by NSF MRI award OCI-1126330.  For acknowledgment
+instructions see the Website.
+
+Please report all grants and publications facilitated by usage to 
+dana.brunson@okstate.edu
+
+Please direct all other questions, comments and support requests
+to hpcc@okstate.edu
+
+NOTE:
+
+ALL applications must be run through the scheduler.
+
+
+
+Quota information:
+You have used 0.0 GB of your allocated 25 GB in /home/pete.
+```
+
+Since this is his first time, Pete realizes that it is a good practice to change the default password given to him by HPCC staff to one that is more secure and easy for him to remember.
+
+```shell
+passwd
+```
+
+```shell
+Chaning password for user pete.
+Current Password:
+```
+
+Pete enters his current password and then enters the new password twice. From now on, he will use this password to log into Cowboy. Pete begins by looking around. He first wants to know where he is on Cowboy. He does this by using the command `pwd`.
+
+```shell
+pwd
+```
+
+He sees that he is in his home directory.
+
+```shell
+/home/pete
+```
+
+Next, Pete wants to know what files he has in his home directory. He can do this using the list command.
+
+```shell
+ls
+```
+
+There is no output since his home directory is empty. Pete needs to move his twitter data to Cowboy so that he can begin working on his project. He does this by moving the hpc-novice directory to his home directory on cowboy using Cyberduck. Now when he checks to see what files are in his home directory, he sees that the hpc-novice files are now in his home folder.
+
+```shell
+ls
+```
+
+```shell
+hpc-novice
+```
+
+He can move into the project directory by using the change directory command.
+
+```shell
+cd hpc-novice
+ls
+```
+
+```shell
+twitter-data
+```
+
+Now Pete is ready to begin working with his data. He moves back to his home directory.
+
+```shell
+cd
+```
+
+>For more information on shell commands, see the [Software Carpentry Shell Lesson](http://swcarpentry.github.io/shell-novice/ "The Unix Shell").

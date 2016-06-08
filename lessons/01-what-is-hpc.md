@@ -7,7 +7,7 @@ What is a supercomputer and why do we care?
 
 What is a Supercomputer?
 ------------------------
-Supercomputing has a long rich history in academic research. Click [here](https://www.youtube.com/watch?v=6TRfy70DqD8 "Ferranti Atlas: Britain's first supercomputer") to see a video of what supercomputing looked like at its inception. A common misconception of supercomputing is that supercomputers are giant, futuristic machines computing massive calculations that cannot be done on a personal computer. While supercomputers do allow their users to push beyond the capabilities of a personal computer, they are not actually a single machine. In fact, supercomputers are simply many “normal” computers that have been connected by a high speed network that allows them to work together on a problem that would be too big for any single computer to take on by itself. Most supercomputers simply look like the server racks that are found in a data center. One supercomputer can have anywhere from two (not very useful) to hundreds of single computers networked together. Each of the single computers are referred to as nodes.
+Supercomputing has a long rich history in academic research. Click [here](https://www.youtube.com/watch?v=6TRfy70DqD8 "Ferranti Atlas: Britain's first supercomputer") to see a video of what supercomputing looked like at its inception. A common misconception of supercomputing is that supercomputers are giant, futuristic machines computing massive calculations that cannot be done on a personal computer. While supercomputers do allow their users to push beyond the capabilities of a personal computer, they are not actually a single machine. In fact, supercomputers are simply many “normal” computers that have been connected by a high speed network that allows them to work together on a problem that would be too big for any single computer to take on by itself. Most supercomputers simply look like the server racks that are found in a data center. One supercomputer can have anywhere from two (not very useful) to hundreds of single computers networked together. Each of the single computers are referred to as a node.
 ![Oklahoma State University Cowboy Supercomputer](/img/cowboy.jpg "Cowboy Supercomputer")
 
 Parallel Teamwork
@@ -17,7 +17,7 @@ Our chemist's problem is an example of a problem that can be computed in paralle
 
 Serial Complications
 --------------------
-In the chemist example, we have assumed that calculations for one molecule do not depend on the calculations of another molecule. Real life is not always so simple. This is why the nodes in a supercomputer need to communicate with each other over a network. This dependence can be so extreme that each computation depends explicitly on a previous computation. Consider the meteorologist who wants to create a climate model forecast for the next several years. The meteorologist is interested in the temperature at a single location, one year from today. Forecasting the temperature in a given day is dependent upon temperatures from the previous day. If the computation for a single day requires two hours on her personal computer, she will need 730 hours, or a month of uninterrupted computation in order to compute the 365 different day computations necessary to forecast the temperature one year from today. It would be convenient if she could use a supercomputer to speed up the process by giving each node the computations for a single day. Then her job would only take two hours. Unfortunately, since each day depends on the previous day's results for its computations, each node will wait in line for the previous node to finish and it will still take a month for the job to finish even though she is using the supercomputer. Such a job is said to be a serial job. Supercomputers do not give a speed up advantage for serial jobs.
+In the chemist example, we have assumed that calculations for one molecule do not depend on the calculations of another molecule. Real life is not always so simple. This is why the nodes in a supercomputer need to communicate with each other over a network. This dependence can be so extreme that each computation depends explicitly on a previous computation. *(Need a more realistic example here)Consider the meteorologist who wants to create a climate model forecast for the next several years. The meteorologist is interested in the temperature at a single location, one year from today. Forecasting the temperature in a given day is dependent upon temperatures from the previous day. If the computation for a single day requires two hours on her personal computer, she will need 730 hours, or a month of uninterrupted computation in order to compute the 365 different day computations necessary to forecast the temperature one year from today. It would be convenient if she could use a supercomputer to speed up the process by giving each node the computations for a single day. Then her job would only take two hours. Unfortunately, since each day depends on the previous day's results for its computations, each node will wait in line for the previous node to finish and it will still take a month for the job to finish even though she is using the supercomputer.* Such a job is said to be a serial job. Supercomputers do not give a speed up advantage for serial jobs.
 
 Breaking Up a Problem
 ---------------------
@@ -25,44 +25,4 @@ In reality, meteorologists are actually heavy supercomputer users, but they do n
 
 Geospatial Twitter Data
 -----------------------
-Pete is a geography researcher who has never used a supercomputer before. Pete is working with geographical twitter data. There's a lot of data on twitter and the sheer amount of data he needs to work with means his personal computer is not going to provide him enough processing power, so he is going to need to use a Cowboy. Since he has never used a high performance cluster before, he decides to log onto Cowboy and have a look around. He begins by using `ssh`.
-
->If you are using Windows, you will use Putty instead.
-
-```shell
-ssh pete@cowboy.hpc.okstate.edu
-```
-   
-```shell
-pete@cowboy.hpc.okstate.edu's password: 
-```
-
-He enters his password and is greeted by the welcome screen.
-
-```shell
-Last login: Fri May 27 14:31:05 2016 from 123.45.678.901
-Welcome to Cowboy!  
-
-Please see the HPC Website for helpful usage information:
-   hpcc.okstate.edu
-
-
-Cowboy is funded by NSF MRI award OCI-1126330.  For acknowledgment
-instructions see the Website.
-
-Please report all grants and publications facilitated by usage to 
-dana.brunson@okstate.edu
-
-Please direct all other questions, comments and support requests
-to hpcc@okstate.edu
-
-NOTE:
-
-ALL applications must be run through the scheduler.
-
-
-
-Quota information:
-You have used 0.0 GB of your allocated 25 GB in /home/pete.
-```
-
+Pete is a geography researcher who has never used a supercomputer before. Pete is working with geographical twitter data. There's a lot of data on twitter and the sheer amount of data he needs to work with means his personal computer is not going to provide him enough processing power, so he is going to need to use a Cowboy.
