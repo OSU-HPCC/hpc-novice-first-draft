@@ -129,7 +129,7 @@ passwd
 ```
 
 ```shell
-Chaning password for user pete.
+Changing password for user pete.
 Current Password:
 ```
 
