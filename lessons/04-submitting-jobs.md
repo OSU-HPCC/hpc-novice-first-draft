@@ -134,7 +134,7 @@ The batch scheduler gives him back a job number. Pete can use this job number to
 > You will use whatever number the scheduler returned to you when you submitted the job. Do not use the actual number printed below!
 
 ```bash
-qdel 592965.mgmt1
+qdel 592964.mgmt1
 ```
 
 He forgot that he wants to have the scheduler email him when the job is finished. He needs to edit his submit script.
