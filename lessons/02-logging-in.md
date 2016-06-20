@@ -77,8 +77,8 @@ Other Options
 -------------
 Cyberduck is one of many options available for transferring files. To see others, you can check out the OSU HPCC site [here](https://hpcc.okstate.edu/content/uploading-and-downloading-files-0).
 
-Pete's Twitter Data
-===================
+Pete's Tweets
+=============
 
 After receiving an account from HPCC staff, Pete logs into Cowboy for the first time. He opens up a terminal and uses SSH.
 

@@ -1,7 +1,7 @@
 Modules
 =======
 >*Learning Objectives*
->*    Student be able to explain the basic function of a module and why modules are important on a high performance cluster.
+>*    Student will be able to explain the basic function of a module and why modules are important on a high performance cluster.
 >*    Student will be able to find out if the software s/he needs to use is installed on the cluster.
 >*    Student will be able to load the software that s/he needs in order to run his/her job using `module load`.
 >*    Student will be able to verify that the correct environment has been loaded using `module list`.
@@ -135,6 +135,9 @@ Wait a minute, why are there so many modules? Didn’t we just load MrBayes? The
 module purge
 ```
 
+Pete's Tweets
+=============
+
 Pete now has his twitter data on Cowboy and is ready to begin working on his project. Pete is working with large amounts of raw twitter data and so he is going to need to use a [Python](http://swcarpentry.github.io/python-novice-inflammation/ "Software Carpentry Python Lesson") script that he wrote in order to reformat the twitter data into something that is nice to work with. He begins by moving into his project folder.
 
 ```shell
@@ -217,4 +220,4 @@ The following have been reloaded with a version change:
 
 ```
 
-He's now ready to submit his job to the Cowboy's work nodes.
+He's now ready to submit his job to one of Cowboy's work nodes.

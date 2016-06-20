@@ -23,6 +23,6 @@ Breaking Up a Problem
 ---------------------
 In reality, meteorologists are actually heavy supercomputer users, but they do not break up their problems in this manner. Learning how to break up a problem for computation is an important skill when using a supercomputer. Before even using a supercomputer it important to consider how a problem can be broken into smaller pieces, and to identify which parts are serial and which parts are parallel. This allows researchers to identify whether or not a supercomputer will provide worthwhile speed-up for a particular problem. Often a problem will have a mixture of both parallel and serial aspects. The staff at the High Performance Computing Center are an excellent resource and can help researchers as they identify how to implement their particular problem on a supercomputer. They can connect researchers with both local and national resources. [Don't hesitate to contact them](https://hpcc.okstate.edu/content/osu-hpc-contact-information "OSU HPCC Contact Info").
 
-Geospatial Twitter Data
+Pete's Tweets
 -----------------------
 Pete is a geography researcher who has never used a supercomputer before. Pete is working with geographical twitter data. There's a lot of data on twitter and the sheer amount of data he needs to work with means his personal computer is not going to provide him enough processing power, so he is going to need to use Cowboy.
