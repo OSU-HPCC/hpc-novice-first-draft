@@ -11,11 +11,11 @@ We now know how to log in, but what good is a supercomputer if we cannot use the
 
 First, it would be nice to know what software Cowboy has available for us to use.
 
-```shell
+```bash
 module avail
 ```
 
-```shell
+```bash
 ---------------------------- /opt/modulefiles/Compilers -----------------------------
    cmake/3.0.0               mpich2/intel                  (D)
    cmake/3.1.3               mvapich/gnu
@@ -64,17 +64,17 @@ module avail
 --More--
 ```
 
->Notice the `--More--` at the end of the output. The shell is using a program called More to output the results since they go off the screen. To see more, press SPACE-BAR to page down one page at a time and press ENTER to scroll down one line at a time. The normal promt will return again once you reach the end of the list.
+>Notice the `--More--` at the end of the output. The shell is using a program called More to output the results since they go off the screen. To see more, press SPACE-BAR to page down one page at a time and press ENTER to scroll down one line at a time. The normal prompt will return again once you reach the end of the list.
 
 Here we have a table listing all the software installed on Cowboy. Notice there are two general categories: Compilers, and Applications. Compilers are used by users who are writing their own code, while Applications work the exact same way as Applications in Windows or on a Macintosh (except no GUI). Look through the list and see if you can find `mathematica`. There are two entries: `mathematica/9.0.1` and `mathematica/10.0.0`. That’s because there are two different versions of Mathematica installed on Cowboy and users are able to use either one. Next notice that some of the modules have a (D) next to them. Since there are multiple versions of each piece of software, certain versions are designated as default. In the case of Mathematica, if the user tells the computer to load Mathematica, but doesn’t tell it which version to load, it will automatically load version 10.0.0.
 
 We can also search to see if a particular piece of software is installed on Cowboy by using the module search tool, spider:
 
-```shell
+```bash
 module spider mrbayes
 ```
 
-```shell
+```bash
 Rebuilding cache file, please wait ... done
 
   ---------------------------------------------------------------------------------
@@ -98,40 +98,40 @@ Rebuilding cache file, please wait ... done
 
 In order to use a particular piece of software, we need to 'load' it.
 
-```shell
+```bash
 module load mathematica
 ```
 
 We can also check to see what software we have loaded so far.
 
-```shell
+```bash
 module list
 ```
 
-```shell
+```bash
 1) mathematica/10.0.0
 ```
 
 Let's remove Mathematical and load MrBayes instead.
 
-```shell
+```bash
 module rm mathematica
 module load mrbayes
 ```
 
 Checking on what we have loaded now, we see something interesting.
 
-```shell
+```bash
 module list
 ```
 
-```shell
+```bash
 1) mrbayes/3.2.2-openmpi-intel    2) openmpi-1.4/intel    3) beagle/1.0
 ```
 
 Wait a minute, why are there so many modules? Didn’t we just load MrBayes? The beauty of modules is that it automatically loads MrBayes and any other software that MrBayes depends on to run. Lets remove all our software and start again with a clean slate.
 
-```shell
+```bash
 module purge
 ```
 
@@ -140,22 +140,22 @@ Pete's Tweets
 
 Pete now has his twitter data on Cowboy and is ready to begin working on his project. Pete is working with large amounts of raw twitter data and so he is going to need to use a [Python](http://swcarpentry.github.io/python-novice-inflammation/ "Software Carpentry Python Lesson") script that he wrote in order to reformat the twitter data into something that is nice to work with. He begins by moving into his project folder.
 
-```shell
+```bash
 cd hpc-novice/twitter-data
 ls
 ```
 
-```shell
+```bash
 parse_tweets.py  raw-tweets.csv  twitter-submit-script.pbs
 ```
 
 He first checks to see what is in the `raw-tweets.csv` file by using the concatenate command.
 
-```shell
+```bash
 cat raw-tweets.csv
 ```
 
-```shell
+```bash
 "{""created_at"":""Tue Feb 02 06:00:00 +0000 2016"",""id"":694399849983299584,""id_str"":""694399849983299584"",""text"":""Reppin it @ Greenville,South Catolina https:\/\/t.co\/4066SGfwu4"",""source"":""\u003ca href=\""http:\/\/instagram.com\"" rel=\""nofollow\""\u003eInstagram\u003c\/a\u003e"",""truncated"":false,""in_reply_to_status_id"":null,""in_reply_to_status_id_str"":null,""in_reply_to_user_id"":null,""in_reply_to_user_id_str"":null,""in_reply_to_screen_name"":null,""user"":{""id"":605166195,""id_str"":""605166195"",""name"":""Vilai Harrington"",""screen_name"":""BigVilaiH"",""location"":""Greenville, SC"",""url"":""http:\/\/vilaiharrington.bandcamp.com"",""description"":""Semi- Samoan hillbilly, claw hammer troubadour traveling around the states singing about my life and stuff. Party Hardy, Praise Jesus"",""protected"":false,""verified"":false,""followers_count"":234,""friends_count"":282,""listed_count"":3,""favourites_count"":2164,""statuses_count"":4375,""created_at"":""Mon Jun 11 03:46:49 +0000 2012"",""utc_offset"":-14400,""time_zone"":""Atlantic Time (Canada)"",""geo_enabled"":true,""lang"":""en"",""contributors_enabled"":false,""is_translator"":false,""profile_background_color"":""B2DFDA"",""profile_background_image_url"":""http:\/\/pbs.twimg.com\/profile_background_images\/472628960782606336\/da1sI0bt.jpeg"",""profile_background_image_url_https"":""https:\/\/pbs.twimg.com\/profile_background_images\/472628960782606336\/da1sI0bt.jpeg"",""profile_background_tile"":true,""profile_link_color"":""93A644"",""profile_sidebar_border_color"":""FFFFFF"",""profile_sidebar_fill_color"":""FFFFFF"",""profile_text_color"":""333333"",""profile_use_background_image"":true,""profile_image_url"":""http:\/\/pbs.twimg.com\/profile_images\/648578117175406592\/EQlLUWRs_normal.jpg"",""profile_image_url_https"":""https:\/\/pbs.twimg.com\/profile_images\/648578117175406592\/EQlLUWRs_normal.jpg"",""profile_banner_url"":""https:\/\/pbs.twimg.com\/profile_banners\/605166195\/1438579414"",""default_profile"":false,""default_profile_image"":false,""following"":null,""follow_request_sent"":null,""notifications"":null},""geo"":{""type"":""Point"",""coordinates"":[34.79965790,-82.38429501]},""coordinates"":{""type"":""Point"",""coordinates"":[-82.38429501,34.79965790]},""place"":{""id"":""2ce3c365189bf3c4"",""url"":""https:\/\/api.twitter.com\/1.1\/geo\/id\/2ce3c365189bf3c4.json"",""place_type"":""city"",""name"":""Gantt"",""full_name"":""Gantt, SC"",""country_code"":""US"",""country"":""United States"",""bounding_box"":{""type"":""Polygon"",""coordinates"":[[[-82.435554,34.747429],[-82.435554,34.818599],[-82.365062,34.818599],[-82.365062,34.747429]]]},""attributes"":{}},""contributors"":null,""is_quote_status"":false,""retweet_count"":0,""favorite_count"":0,""entities"":{""hashtags"":[],""urls"":[{""url"":""https:\/\/t.co\/4066SGfwu4"",""expanded_url"":""https:\/\/www.instagram.com\/p\/BBReWwIkkIb\/"",""display_url"":""instagram.com\/p\/BBReWwIkkIb\/"",""indices"":[38,61]}],""user_mentions"":[],""symbols"":[]},""favorited"":false,""retweeted"":false,""possibly_sensitive"":false,""filter_level"":""low"",""lang"":""en"",""timestamp_ms"":""1454392800218""}
 "{""created_at"":""Tue Feb 02 06:00:00 +0000 2016"",""id"":694399850474016768,""id_str"":""694399850474016768"",""text"":""Legs are mad sore \ud83d\ude11"",""source"":""\u003ca href=\""http:\/\/twitter.com\/download\/android\"" rel=\""nofollow\""\u003eTwitter for Android\u003c\/a\u003e"",""truncated"":false,""in_reply_to_status_id"":null,""in_reply_to_status_id_str"":null,""in_reply_to_user_id"":null,""in_reply_to_user_id_str"":null,""in_reply_to_screen_name"":null,""user"":{""id"":213940016,""id_str"":""213940016"",""name"":""Rhonda"",""screen_name"":""iislandbreeze25"",""location"":""\u300bBaltimore \u300bTampa \u300bJamaica"",""url"":""http:\/\/www.facebook.com\/rhondavaughn"",""description"":""-26  - #teamJamaica -single mother -air force bound"",""protected"":false,""verified"":false,""followers_count"":472,""friends_count"":528,""listed_count"":2,""favourites_count"":3777,""statuses_count"":7104,""created_at"":""Wed Nov 10 04:30:59 +0000 2010"",""utc_offset"":-14400,""time_zone"":""Atlantic Time (Canada)"",""geo_enabled"":true,""lang"":""en"",""contributors_enabled"":false,""is_translator"":false,""profile_background_color"":""C0DEED"",""profile_background_image_url"":""http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png"",""profile_background_image_url_https"":""https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png"",""profile_background_tile"":false,""profile_link_color"":""0084B4"",""profile_sidebar_border_color"":""C0DEED"",""profile_sidebar_fill_color"":""DDEEF6"",""profile_text_color"":""333333"",""profile_use_background_image"":true,""profile_image_url"":""http:\/\/pbs.twimg.com\/profile_images\/565381084746354689\/J5-3yJ9Y_normal.jpeg"",""profile_image_url_https"":""https:\/\/pbs.twimg.com\/profile_images\/565381084746354689\/J5-3yJ9Y_normal.jpeg"",""profile_banner_url"":""https:\/\/pbs.twimg.com\/profile_banners\/213940016\/1424792410"",""default_profile"":true,""default_profile_image"":false,""following"":null,""follow_request_sent"":null,""notifications"":null},""geo"":{""type"":""Point"",""coordinates"":[28.0637197,-82.4399744]},""coordinates"":{""type"":""Point"",""coordinates"":[-82.4399744,28.0637197]},""place"":{""id"":""553011a282a18fb5"",""url"":""https:\/\/api.twitter.com\/1.1\/geo\/id\/553011a282a18fb5.json"",""place_type"":""city"",""name"":""University"",""full_name"":""University, FL"",""country_code"":""US"",""country"":""United States"",""bounding_box"":{""type"":""Polygon"",""coordinates"":[[[-82.454910,28.054805],[-82.454910,28.098918],[-82.409812,28.098918],[-82.409812,28.054805]]]},""attributes"":{}},""contributors"":null,""is_quote_status"":false,""retweet_count"":0,""favorite_count"":0,""entities"":{""hashtags"":[],""urls"":[],""user_mentions"":[],""symbols"":[]},""favorited"":false,""retweeted"":false,""filter_level"":""low"",""lang"":""en"",""timestamp_ms"":""1454392800335""}
 "{""created_at"":""Tue Feb 02 06:00:00 +0000 2016"",""id"":694399850436136960,""id_str"":""694399850436136960"",""text"":""#MOOvies MooLander 2 @midnight"",""source"":""\u003ca href=\""http:\/\/twitter.com\/download\/iphone\"" rel=\""nofollow\""\u003eTwitter for iPhone\u003c\/a\u003e"",""truncated"":false,""in_reply_to_status_id"":null,""in_reply_to_status_id_str"":null,""in_reply_to_user_id"":null,""in_reply_to_user_id_str"":null,""in_reply_to_screen_name"":null,""user"":{""id"":23209365,""id_str"":""23209365"",""name"":""Patricia LoL"",""screen_name"":""thePatriciaRae"",""location"":""los angeles\/nyc bred"",""url"":""http:\/\/theartistsrae.blogspot.com"",""description"":""Colombian\/American. actor\/producer\/illustrator\/humorist-- Maria full of Grace, The Big Wedding http:\/\/theartistsrae.blogspot.com http:\/\/www.imdb.me\/patriciarae"",""protected"":false,""verified"":false,""followers_count"":2311,""friends_count"":1928,""listed_count"":105,""favourites_count"":5672,""statuses_count"":10853,""created_at"":""Sat Mar 07 16:46:05 +0000 2009"",""utc_offset"":-28800,""time_zone"":""Pacific Time (US & Canada)"",""geo_enabled"":true,""lang"":""en"",""contributors_enabled"":false,""is_translator"":false,""profile_background_color"":""1C4D47"",""profile_background_image_url"":""http:\/\/pbs.twimg.com\/profile_background_images\/768244680\/11f9b581856cc62842f5b69684569b18.jpeg"",""profile_background_image_url_https"":""https:\/\/pbs.twimg.com\/profile_background_images\/768244680\/11f9b581856cc62842f5b69684569b18.jpeg"",""profile_background_tile"":false,""profile_link_color"":""5A6B0F"",""profile_sidebar_border_color"":""000000"",""profile_sidebar_fill_color"":""FFFFFF"",""profile_text_color"":""333333"",""profile_use_background_image"":true,""profile_image_url"":""http:\/\/pbs.twimg.com\/profile_images\/688836483684237312\/gBwuMFXf_normal.jpg"",""profile_image_url_https"":""https:\/\/pbs.twimg.com\/profile_images\/688836483684237312\/gBwuMFXf_normal.jpg"",""profile_banner_url"":""https:\/\/pbs.twimg.com\/profile_banners\/23209365\/1453073869"",""default_profile"":false,""default_profile_image"":false,""following"":null,""follow_request_sent"":null,""notifications"":null},""geo"":{""type"":""Point"",""coordinates"":[34.11428762,-118.26072255]},""coordinates"":{""type"":""Point"",""coordinates"":[-118.26072255,34.11428762]},""place"":{""id"":""3b77caf94bfc81fe"",""url"":""https:\/\/api.twitter.com\/1.1\/geo\/id\/3b77caf94bfc81fe.json"",""place_type"":""city"",""name"":""Los Angeles"",""full_name"":""Los Angeles, CA"",""country_code"":""US"",""country"":""United States"",""bounding_box"":{""type"":""Polygon"",""coordinates"":[[[-118.668404,33.704538],[-118.668404,34.337041],[-118.155409,34.337041],[-118.155409,33.704538]]]},""attributes"":{}},""contributors"":null,""is_quote_status"":false,""retweet_count"":0,""favorite_count"":0,""entities"":{""hashtags"":[{""text"":""MOOvies"",""indices"":[0,8]}],""urls"":[],""user_mentions"":[{""screen_name"":""midnight"",""name"":""@midnight"",""id"":1418745782,""id_str"":""1418745782"",""indices"":[21,30]}],""symbols"":[]},""favorited"":false,""retweeted"":false,""filter_level"":""low"",""lang"":""nl"",""timestamp_ms"":""1454392800326""}
@@ -176,13 +176,13 @@ cat raw-tweets.csv
 
 Gross! He won't be doing that again any time soon! Fortunately, he wrote `parse_tweets.py` in order to let the computer clean things up for him. Since `parse_tweets.py` was written in Python, Pete will need to load the Python module. First he checks to see what versions of python are available on Cowboy.
 
-```shell
+```bash
 module spider python
 ```
 
 He sees that there are three versions available:
 
-```shell
+```bash
   ----------------------------------------------------------------------------
     python:
   ----------------------------------------------------------------------------
@@ -197,23 +197,23 @@ He sees that there are three versions available:
 
 He decides to load the newest one.
 
-```shell
+```bash
 module load python/3.5.0
 module list
 ```
 
-```shell
+```bash
 Currently Loaded Modules:
   1) python/3.5.0    2) openblas/0.2.15    3) gcc-4.7.2
 ```
 
 Suddenly Pete remembers that he wrote his code to be compatible with Python 2, not Python 3! He needs to remove `python/3.5.0` and load `python/2.7.3` instead. He uses the swap shortcut.
 
-```shell
+```bash
 module swap python/3.5.0 python/2.7.3
 ```
 
-```shell
+```bash
 
 The following have been reloaded with a version change:
   1) python/3.5.0 => python/2.7.3

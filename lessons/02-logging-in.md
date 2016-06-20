@@ -2,7 +2,7 @@ Logging into a Cluster
 ======================
 >*Learning Objectives*
 >*    Student will be able to log on and off a Linux cluster using SSH from windows, mac or Linux based machines.
->*    Student will be able to use a gui based file transfer system (something like cyberduck) to move files to and from the cluster.
+>*    Student will be able to use a GUI based file transfer system (something like cyberduck) to move files to and from the cluster.
 >*    Student will be able to change their account password.
 >*    Student will understand the importance of backing up files on their own machine.
 
@@ -24,7 +24,7 @@ Putty is a free and open-source terminal emulator that supports network protocol
 
 ![Putty Opening Screen](/img/putty.jpg "Putty") 
 
-In the box labelled hostname, enter the name of the system you want to connect to: `cowboy.hpc.okstate.edu`. Make sure the Connection type is `SSH` and the Port number is `22`. In the Saved Sessions box, you can give a name for these login settings, i.e. Cowboy, then click save. The next time you open Putty, you can double click this saved session and it will open a terminal window that will be ready to log you into Cowboy. After clicking 'Open', you'll be prompted first to enter your Cowboy user name. Hit 'Enter' after you have typed your user name. Next you will be prompted to enter your password followed by 'Enter'.
+In the box labeled hostname, enter the name of the system you want to connect to: `cowboy.hpc.okstate.edu`. Make sure the Connection type is `SSH` and the Port number is `22`. In the Saved Sessions box, you can give a name for these login settings, i.e. Cowboy, then click save. The next time you open Putty, you can double click this saved session and it will open a terminal window that will be ready to log you into Cowboy. After clicking 'Open', you'll be prompted first to enter your Cowboy user name. Hit 'Enter' after you have typed your user name. Next you will be prompted to enter your password followed by 'Enter'.
 
 >Your cursor will not move as you type. This is a safety feature of the bash shell. Don't worry, just type your password and hit 'Enter'.
 
@@ -82,17 +82,17 @@ Pete's Tweets
 
 After receiving an account from HPCC staff, Pete logs into Cowboy for the first time. He opens up a terminal and uses SSH.
 
-```shell
+```bash
 ssh pete@cowboy.hpc.okstate.edu
 ```
    
-```shell
+```bash
 pete@cowboy.hpc.okstate.edu's password: 
 ```
 
 He enters his password and is greeted by the welcome screen.
 
-```shell
+```bash
 Last login: Fri May 27 14:31:05 2016 from 123.45.678.901
 Welcome to Cowboy!  
 
@@ -121,57 +121,57 @@ You have used 0.0 GB of your allocated 25 GB in /home/pete.
 
 Since this is his first time, Pete realizes that it is a good practice to change the default password given to him by HPCC staff to one that is more secure and easy for him to remember.
 
-```shell
+```bash
 passwd
 ```
 
-```shell
+```bash
 Changing password for user pete.
 Current Password:
 ```
 
 Pete enters his current password and then enters the new password twice. From now on, he will use this password to log into Cowboy. Pete begins by looking around. He first wants to know where he is on Cowboy. He does this by using the command `pwd`.
 
-```shell
+```bash
 pwd
 ```
 
 He sees that he is in his home directory.
 
-```shell
+```bash
 /home/pete
 ```
 
 Next, Pete wants to know what files he has in his home directory. He can do this using the list command.
 
-```shell
+```bash
 ls
 ```
 
 There is no output since his home directory is empty. Pete needs to move his twitter data to Cowboy so that he can begin working on his project. He does this by moving the hpc-novice directory to his home directory on cowboy using Cyberduck. Now when he checks to see what files are in his home directory, he sees that the hpc-novice files are now in his home folder.
 
-```shell
+```bash
 ls
 ```
 
-```shell
+```bash
 hpc-novice
 ```
 
 He can move into the project directory by using the change directory command.
 
-```shell
+```bash
 cd hpc-novice
 ls
 ```
 
-```shell
+```bash
 twitter-data
 ```
 
 Now Pete is ready to begin working with his data. He moves back to his home directory.
 
-```shell
+```bash
 cd
 ```
 
