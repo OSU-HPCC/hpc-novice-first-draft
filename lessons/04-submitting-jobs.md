@@ -125,10 +125,16 @@ cd ~/hpc-novice/twitter-data
 qsub twitter-submit-script.pbs
 ```
 
+```bash
+592964.mgmt1
+```
+
 The batch scheduler gives him back a job number. Pete can use this job number to interact with the scheduler and check on the status of his job. Unfortunately, he remembers that he forgot to change something in the script! He needs to delete his job and remove it from the queue.
 
+> You will use whatever number the scheduler returned to you when you submitted the job. Do not use the actual number printed below!
+
 ```bash
-qdel JOB_NUMBER_GOES_HERE
+qdel 592965.mgmt1
 ```
 
 He forgot that he wants to have the scheduler email him when the job is finished. He needs to edit his submit script.
@@ -146,6 +152,10 @@ He adds the following special comment at the end of the special comments section
 Now it's ready. He resubmits the job.
 ```bash
 qsub twitter-submit-script.pbs
+```
+
+```bash
+592965.mgmt1
 ```
 
 Pete knows that the job will email him when it has finished, but he's getting a little bit impatient. He decides to check on the status of his job.
