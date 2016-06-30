@@ -73,6 +73,14 @@ From here you can click on and navigate your directories and files in your home 
 >If you are using Linux or a Mac, you can also transfer files using the command line. To copy a file from Cowboy to your local machine open a terminal on your local machine and type `scp yourusername@cowboy.hpc.okstate.edu:/directory/yourfilename .` Be sure to include a space and a period in the command.
 >To copy a file from your local machine to Cowboy, open a terminal on your local machine, navigate to the directory where your file is located and type the following command: `scp yourfilename yourusername@cowboy.hpc.okstate.edu:/directory/path/`.
 
+>If you are using a public computer with Windows and do not have priviledges that allow you install new software, you can use [WinSCP](http://winscp.net/eng/download.php). Download the 'Portable Executable' version. Save the excutable to your desktop and double click the file to start the program. You should see the following screen:
+>
+>![WinSCP Screen](/img/WinSCP.JPG "WinSCP")
+>
+>In the `hostname` box enter the hostname of the hpc system you wish to use: `cowboy.hpc.okstate.edu`. In the `username` box enter your username (or leave it blank and it will prompt you for it later). Press enter and it will begin connecting. When Using WinSCP you should be greeted with a window similar to the one below. **NOTE:** On the left is your local disk and on the right is your home directory on the hpc system. From here you can drag and drop to copy files in either direction. You may be asked to confirm that you want to copy files.
+>
+>![WinSCP File Screen](/img/winscpfiles.JPG "WinSCP Files")
+
 Other Options
 -------------
 Cyberduck is one of many options available for transferring files. To see others, you can check out the OSU HPCC site [here](https://hpcc.okstate.edu/content/uploading-and-downloading-files-0).
