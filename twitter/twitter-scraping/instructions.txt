@@ -1,0 +1,12 @@
+- This is the resource I originally used to learn about scraping tweets: https://www.youtube.com/watch?v=pUUxmvvl2FE
+- Both scripts in this folder require the module 'tweepy', which can be installed with pip:
+
+pip install tweepy
+
+- Unfortunately, there is an issue with urllib3 that prevents tweepy from working with python 2.7.6 (Ubuntu 14.04's default). You can get around this by using a more current version of python 2.7.x, such as 2.7.10 (which is what I use with tweepy), and using a virtual environment. Or you could install the Anaconda distribution of python (which has some useful tools for beginners anyway; it comes with python 2.7.10) and appending the installation location to your .bashrc. I am unsure about tweepy's compatibility with python 3.
+
+- The script twitter_scrape_new.py also requires the module pymongo, which can be installed with pip:
+
+pip install pymongo
+
+- and also a full installation of mongodb; instructions here: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
